@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "annisaurohmah",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://annisaurohmah.vercel.app/ov.png",
         width: 1920,
         height: 1080,
       },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon1.png",
   },
 };
 const inter = Inter({

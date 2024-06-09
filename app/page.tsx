@@ -35,15 +35,7 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in mx-16">
         <h2 className="text-sm text-zinc-500 ">
-          A second-year Software Engineering student at Gadjah Mada University.
-          Experienced in Software Requirements Engineering, Software
-          Development, Database Management, Software Design, and Software
-          Testing. Can apply Software Engineering Methodologies in team
-          projects. Interested in mobile application and website development.
-          Experienced in collaborating with multidisciplinary teams to deliver
-          software solutions. Passionate about continuous learning and keeping
-          up with technology. Actively seek opportunities to apply expertise to
-          drive impactful results and contribute to innovative projects.
+          UI UX Designer | Web Developer | Software Engineer
         </h2>
       </div>
     </div>
