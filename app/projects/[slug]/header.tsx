@@ -8,7 +8,7 @@ type Props = {
     url?: string;
     title: string;
     description: string;
-    types: ProjectType[];
+    types?: ProjectType[];
     repository?: string;
   };
 
