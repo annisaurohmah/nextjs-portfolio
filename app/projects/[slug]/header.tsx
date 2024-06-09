@@ -122,7 +122,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
               {project.title}
             </h1>
             <div className="mt-6 flex flex-wrap gap-2">
-              {project.types.map((type, index) => (
+              {project.types?.map((type, index) => (
                 <h4
                   key={index}
                   className={`font-bold text-lg px-3 py-1 inline-block rounded ${getTypeClassNames(
