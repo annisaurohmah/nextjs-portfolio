@@ -32,6 +32,7 @@ export const Project = defineDocumentType(() => ({
 		types: {
             type: "list",
             of: { type: "string" },
+			default: [],
         },
 		description: {
 			type: "string",
