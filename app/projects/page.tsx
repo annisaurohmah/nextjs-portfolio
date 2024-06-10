@@ -9,18 +9,28 @@ import { Eye } from "lucide-react";
 
 const redis = Redis.fromEnv();
 
-export type ProjectType = 'Web UI/UX' | 'Mobile UI/UX' | 'Frontend' | 'Backend' | 'Mobile';
+export type ProjectType =
+  | "Web UI/UX"
+  | "Mobile UI/UX"
+  | "Frontend"
+  | "Backend"
+  | "Mobile";
 
-const getTypeClassNames = (types: ProjectType[]): string => {
+  const getTypeClassNames = (types: string[]): string => {
     const typeClassMap: Record<ProjectType, string> = {
         'Web UI/UX': 'bg-blue-500 text-white',
-		'Mobile UI/UX': 'bg-green-500 text-white',
-		'Frontend': 'bg-yellow-500 text-white',
-		'Backend': 'bg-red-500 text-white',
+		    'Mobile UI/UX': 'bg-green-500 text-white',
+		    'Frontend': 'bg-yellow-500 text-white',
+		    'Backend': 'bg-red-500 text-white',
         'Mobile': 'bg-purple-500 text-white',
     };
 
-    return types.map(type => typeClassMap[type]).join(' ');
+    return types.map(type => {
+        if (type in typeClassMap) {
+            return typeClassMap[type as ProjectType];
+        }
+        return ''; // Atau Anda bisa melewatkan kelas default jika tipe tidak ditemukan
+    }).join(' ');
 };
 
 
@@ -34,7 +44,6 @@ export default async function ProjectsPage() {
     acc[allProjects[i].slug] = v ?? 0;
     return acc;
   }, {} as Record<string, number>);
-
 
   const featured = allProjects.find((project) => project.slug === "unkey")!;
   const top2 = allProjects.find((project) => project.slug === "planetfall")!;
@@ -52,11 +61,11 @@ export default async function ProjectsPage() {
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
     );
-  
-    const featuredWithType: Project = {
-      ...featured,
-      types: featured.types?.map((type: string) => type as ProjectType) || [],
-    };
+
+  const featuredWithType: Project = {
+    ...featured,
+    types: featured.types?.map((type: string) => type as ProjectType) || [],
+  };
 
   return (
     <div className="relative pb-16">
@@ -114,6 +123,7 @@ export default async function ProjectsPage() {
                     </h4>
                   ))}
                 </div>
+
                 <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                   {featured.description}
                 </p>
