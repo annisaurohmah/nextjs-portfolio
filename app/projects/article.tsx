@@ -9,11 +9,11 @@ type Props = {
 
 const getTypeClassNames = (types: string[]): string => {
 	const typeClassMap: Record<string, string> = {
-		"Web UI/UX": "bg-blue-500 text-white",
-		"Mobile UI/UX": "bg-green-500 text-white",
-		Frontend: "bg-yellow-500 text-white",
-		Backend: "bg-red-500 text-white",
-		Mobile: "bg-purple-500 text-white",
+		"Web UI/UX": "bg-cyan-600 text-white",
+		"Mobile UI/UX": "bg-sky-600 text-white",
+		"Frontend": "bg-indigo-600 text-white",
+		"Backend": "bg-fuchsia-600 text-white",
+		"Mobile": "bg-pink-600 text-white",
 	};
 
 	return types
@@ -38,11 +38,10 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 				<div className="flex justify-between gap-2 items-center">
 					<span className="text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
 						{project.date ? (
-							<time dateTime={new Date(project.date).toISOString()}>
-								{Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
-									new Date(project.date),
-								)}
-							</time>
+							<p>
+								{project.date}
+							</p>
+							
 						) : (
 							<span>SOON</span>
 						)}
