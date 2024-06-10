@@ -16,7 +16,7 @@ const computedFields = {
 	},
 };
 
-const validProjectTypes = ['UI/UX', 'Mobile', 'Other'];
+const validProjectTypes = ['Web UI/UX', 'Mobile UI/UX', 'Frontend', 'Backend','Mobile'];
 
 const validateProjectTypes = (types) => {
     if (!Array.isArray(types)) {

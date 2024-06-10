@@ -9,6 +9,21 @@ import { Eye } from "lucide-react";
 
 const redis = Redis.fromEnv();
 
+export type ProjectType = 'Web UI/UX' | 'Mobile UI/UX' | 'Frontend' | 'Backend' | 'Mobile';
+
+const getTypeClassNames = (types: ProjectType[]): string => {
+    const typeClassMap: Record<ProjectType, string> = {
+        'Web UI/UX': 'bg-blue-500 text-white',
+		'Mobile UI/UX': 'bg-green-500 text-white',
+		'Frontend': 'bg-yellow-500 text-white',
+		'Backend': 'bg-red-500 text-white',
+        'Mobile': 'bg-purple-500 text-white',
+    };
+
+    return types.map(type => typeClassMap[type]).join(' ');
+};
+
+
 export const revalidate = 60;
 export default async function ProjectsPage() {
   const views = (
@@ -19,6 +34,7 @@ export default async function ProjectsPage() {
     acc[allProjects[i].slug] = v ?? 0;
     return acc;
   }, {} as Record<string, number>);
+
 
   const featured = allProjects.find((project) => project.slug === "unkey")!;
   const top2 = allProjects.find((project) => project.slug === "planetfall")!;
@@ -81,6 +97,18 @@ export default async function ProjectsPage() {
                 >
                   {featured.title}
                 </h2>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {featured.types?.map((type, index) => (
+                    <h4
+                      key={index}
+                      className={`font-bold text-lg px-3 py-1 inline-block rounded ${getTypeClassNames(
+                        [type]
+                      )}`}
+                    >
+                      {type}
+                    </h4>
+                  ))}
+                </div>
                 <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                   {featured.description}
                 </p>
@@ -102,7 +130,7 @@ export default async function ProjectsPage() {
           </div>
         </div>
         <div className="hidden w-full h-px md:block bg-zinc-800" />
-        
+
         <h2 className="text-2xl font-bold text-zinc-100">All Projects</h2>
         <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
           <div className="grid grid-cols-1 gap-4">

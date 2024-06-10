@@ -123,7 +123,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
               {project.title}
             </h1>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-6 justify-center flex flex-wrap gap-2">
               {project.types?.map((type, index) => (
                 <h4
                   key={index}
