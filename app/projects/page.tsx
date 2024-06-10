@@ -18,11 +18,11 @@ export type ProjectType =
 
   const getTypeClassNames = (types: string[]): string => {
     const typeClassMap: Record<ProjectType, string> = {
-       "Web UI/UX": "bg-cyan-600 text-white",
-		"Mobile UI/UX": "bg-sky-600 text-white",
-		"Frontend": "bg-indigo-600 text-white",
-		"Backend": "bg-fuchsia-600 text-white",
-		"Mobile": "bg-pink-600 text-white",
+        'Web UI/UX': 'bg-cyan-600 text-white',
+		    'Mobile UI/UX': 'bg-sky-600 text-white',
+		    'Frontend': 'bg-indigo-600 text-white',
+		    'Backend': 'bg-fuchsia-600 text-white',
+        'Mobile': 'bg-purple-500 text-white',
     };
 
     return types.map(type => {
@@ -88,11 +88,7 @@ export default async function ProjectsPage() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-xs text-zinc-100">
                     {featured.date ? (
-                      <time dateTime={new Date(featured.date).toISOString()}>
-                        {Intl.DateTimeFormat(undefined, {
-                          dateStyle: "medium",
-                        }).format(new Date(featured.date))}
-                      </time>
+                      <p>{featured.date}</p>
                     ) : (
                       <span>SOON</span>
                     )}
