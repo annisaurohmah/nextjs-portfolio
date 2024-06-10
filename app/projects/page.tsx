@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { allProjects } from "contentlayer/generated";
+import { Project, allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
@@ -52,6 +52,11 @@ export default async function ProjectsPage() {
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
     );
+  
+    const featuredWithType: Project = {
+      ...featured,
+      types: featured.types?.map((type: string) => type as ProjectType) || [],
+    };
 
   return (
     <div className="relative pb-16">
@@ -98,7 +103,7 @@ export default async function ProjectsPage() {
                   {featured.title}
                 </h2>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {featured.types?.map((type, index) => (
+                  {featuredWithType.types?.map((type, index) => (
                     <h4
                       key={index}
                       className={`font-bold text-md px-3 py-1 inline-block rounded ${getTypeClassNames(
