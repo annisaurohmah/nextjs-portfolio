@@ -16,6 +16,20 @@ const computedFields = {
 	},
 };
 
+const validProjectTypes = ['UI/UX', 'Mobile', 'Other'];
+
+const validateProjectTypes = (types) => {
+    if (!Array.isArray(types)) {
+        throw new Error('types should be an array');
+    }
+    types.forEach(type => {
+        if (!validProjectTypes.includes(type)) {
+            throw new Error(`Invalid project type: ${type}`);
+        }
+    });
+    return types;
+};
+
 export const Project = defineDocumentType(() => ({
 	name: "Project",
 	filePathPattern: "./projects/**/*.mdx",
@@ -32,7 +46,8 @@ export const Project = defineDocumentType(() => ({
 		types: {
             type: "list",
             of: { type: "string" },
-			default: [],
+            validate: validateProjectTypes,
+            default: [],
         },
 		description: {
 			type: "string",

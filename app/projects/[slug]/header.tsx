@@ -15,6 +15,8 @@ type Props = {
   views: number;
 };
 
+
+
 type ProjectType = 'Web UI/UX' | 'Mobile UI/UX' | 'Frontend' | 'Backend' | 'Mobile';
 
 const getTypeClassNames = (types: ProjectType[]): string => {
