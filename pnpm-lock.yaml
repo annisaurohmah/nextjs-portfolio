@@ -65,6 +65,9 @@ dependencies:
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
+  react-icons:
+    specifier: ^4.3.1
+    version: 4.3.1
 
 devDependencies:
   '@opentelemetry/api':
