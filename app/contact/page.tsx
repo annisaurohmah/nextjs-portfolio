@@ -1,15 +1,15 @@
 "use client";
-import { Github, Mail, Instagram } from "lucide-react";
+import { Github, Mail, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
 	{
-		icon: <Instagram size={20} />,
-		href: "https://instagram.com/annisa.urohmah",
-		label: "Instagram",
-		handle: "@annisa.urohmah",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/annisa-u-273a6a259/",
+		label: "LinkedIn",
+		handle: "Annisa Urohmah",
 	},
 	{
 		icon: <Mail size={20} />,
