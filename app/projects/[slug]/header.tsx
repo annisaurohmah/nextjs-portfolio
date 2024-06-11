@@ -21,10 +21,10 @@ type ProjectType = 'Web UI/UX' | 'Mobile UI/UX' | 'Frontend' | 'Backend' | 'Mobi
 
 const getTypeClassNames = (types: ProjectType[]): string => {
     const typeClassMap: Record<ProjectType, string> = {
-        'Web UI/UX': 'bg-blue-500 text-white',
-		'Mobile UI/UX': 'bg-green-500 text-white',
-		'Frontend': 'bg-yellow-500 text-white',
-		'Backend': 'bg-red-500 text-white',
+        'Web UI/UX': 'bg-cyan-600 text-white',
+		    'Mobile UI/UX': 'bg-sky-600 text-white',
+		    'Frontend': 'bg-indigo-600 text-white',
+		    'Backend': 'bg-fuchsia-600 text-white',
         'Mobile': 'bg-purple-500 text-white',
     };
 
