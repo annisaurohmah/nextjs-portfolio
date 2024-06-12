@@ -104,6 +104,8 @@ export default function Home() {
         A second-year Software Engineering student at Universitas Gadjah Mada. Experienced in Software Requirements Engineering, Software Development, Database Management, Software Design, and Software Testing. Can apply Software Engineering Methodologies in team projects. Interested in mobile application and website development. Experienced in collaborating with multidisciplinary teams to deliver software solutions. Passionate about continuous learning and keeping up with technology. Actively seek opportunities to apply expertise to drive impactful results and contribute to innovative projects.
         </div>
       </div>
+      
+      <div className="w-full h-px bg-zinc-800" />
 
       <div className="my-16 text-center animate-fade-in mx-16">
         <h2 className="text-lg text-zinc-500 mb-8">Technologies I Use</h2>
