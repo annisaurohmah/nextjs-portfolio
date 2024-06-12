@@ -13,8 +13,11 @@ import {
   FaFigma,
   FaPhp,
   FaJava,
+  
 } from "react-icons/fa"; // Importing icons
 import {
+  SiSelenium,
+  SiCucumber,
   SiTailwindcss,
   SiNextdotjs,
   SiMysql,
@@ -59,7 +62,10 @@ const technologies = [
   },
   { name: "Figma", icon: <FaFigma className="text-4xl text-blue-500" /> },
   { name: "Git", icon: <FaGit className="text-4xl text-white" /> },
-  { name: "Firebase", icon: <SiFirebase className="text-4xl text-yellow-600"/>}
+  { name: "Firebase", icon: <SiFirebase className="text-4xl text-yellow-600"/>},
+  { name: "Selenium", icon: <SiSelenium className="text-4xl text-green-600"/> },
+  { name: "Cucumber", icon: <SiCucumber className="text-4xl text-green-600"/> },
+
 
 ];
 
@@ -99,16 +105,20 @@ export default function Home() {
 
 
       <div className="my-16 text-center animate-fade-in mx-16">
-        <h2 className="text-lg text-zinc-500 mb-8">About</h2>
+        <h2 className="text-lg text-white mb-8">About</h2>
         <div className="mt-2 px-24 text-zinc-400">
-        A second-year Software Engineering student at Universitas Gadjah Mada. Experienced in Software Requirements Engineering, Software Development, Database Management, Software Design, and Software Testing. Can apply Software Engineering Methodologies in team projects. Interested in mobile application and website development. Experienced in collaborating with multidisciplinary teams to deliver software solutions. Passionate about continuous learning and keeping up with technology. Actively seek opportunities to apply expertise to drive impactful results and contribute to innovative projects.
+        A second-year Software Engineering student at Universitas Gadjah Mada. 
+        <br></br><br>
+        </br>Experienced in Software Requirements Engineering, Software Development, Database Management, Software Design, and Software Testing. 
+        <br></br><br>
+        </br>Can apply Software Engineering Methodologies in team projects. Interested in mobile application and website development. Experienced in collaborating with multidisciplinary teams to deliver software solutions. Passionate about continuous learning and keeping up with technology. Actively seek opportunities to apply expertise to drive impactful results and contribute to innovative projects.
         </div>
       </div>
-      
+
       <div className="w-full h-px bg-zinc-800" />
 
       <div className="my-16 text-center animate-fade-in mx-16">
-        <h2 className="text-lg text-zinc-500 mb-8">Technologies I Use</h2>
+        <h2 className="text-lg text-white mb-8">Technologies I Use</h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {technologies.map((tech) => (
             <div key={tech.name} className="flex flex-col items-center">
