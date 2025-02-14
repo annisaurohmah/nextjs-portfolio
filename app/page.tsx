@@ -78,7 +78,7 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+              className="text-sm duration-500 text-white hover:text-zinc-300"
             >
               {item.name}
             </Link>
@@ -105,8 +105,8 @@ export default function Home() {
 
 
       <div className="my-16 text-center animate-fade-in mx-16">
-        <h2 className="text-lg text-white mb-8">About</h2>
-        <div className="mt-2 px-24 text-zinc-400">
+        <h2 className="text-lg text-white mb-8 animate-fade-in">About</h2>
+        <div className="mt-2 px-24 text-zinc-400 animate-fade-in">
         A second-year Software Engineering student at Universitas Gadjah Mada. 
         <br></br><br>
         </br>Experienced in Software Requirements Engineering, Software Development, Database Management, Software Design, and Software Testing. 
@@ -118,12 +118,12 @@ export default function Home() {
       <div className="w-full h-px bg-zinc-800" />
 
       <div className="my-16 text-center animate-fade-in mx-16">
-        <h2 className="text-lg text-white mb-8">Technologies I Use</h2>
+        <h2 className="text-lg text-white mb-8 animate-fade-in" >Technologies I Use</h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {technologies.map((tech) => (
             <div key={tech.name} className="flex flex-col items-center">
               {tech.icon}
-              <span className="mt-2 text-zinc-400">{tech.name}</span>
+              <span className="animate-fade-in mt-2 text-zinc-400">{tech.name}</span>
             </div>
           ))}
         </div>
